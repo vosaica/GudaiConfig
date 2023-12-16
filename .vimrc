@@ -4,7 +4,8 @@ set relativenumber
 
 call plug#begin()
 
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 
 call plug#end()
