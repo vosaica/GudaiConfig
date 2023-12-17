@@ -36,6 +36,7 @@ function CreateSymbolicLink {
 # Common Files
 CreateSymbolicLink "~/.vimrc" ".vimrc"
 CreateSymbolicLink "~/.config" ".config"
+CreateSymbolicLink "~/.gitconfig" ".gitconfig"
 
 # Windows Files
 if ($IsWindows) {
