@@ -1,6 +1,7 @@
 set nocompatible
 set nowrap
 set relativenumber
+set shell=pwsh
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
