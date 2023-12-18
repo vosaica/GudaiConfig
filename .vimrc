@@ -1,9 +1,10 @@
 set nocompatible
 set nowrap
 set relativenumber
-set shell=pwsh
 set hlsearch
 set incsearch
+
+command! Ps terminal pwsh
 
 map <space> <leader>
 map <leader>h :noh<CR>
@@ -31,3 +32,6 @@ vmap s <Plug>(easymotion-s)
 " lightline
 set laststatus=2
 set noshowmode
+
+" fzf
+nnoremap <C-P> :Files<CR>
