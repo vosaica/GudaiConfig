@@ -41,6 +41,7 @@ CreateSymbolicLink "~/.gitconfig" ".gitconfig"
 # Windows Files
 if ($IsWindows) {
     CreateSymbolicLink "~/Documents/PowerShell" ".config/powershell"
+    CreateSymbolicLink "~/Documents/PowerToys" "PowerToys"
     CreateSymbolicLink "$env:LOCALAPPDATA/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json" "WindowsTerminal.json"
 }
 
