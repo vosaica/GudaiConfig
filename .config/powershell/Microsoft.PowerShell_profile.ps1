@@ -4,7 +4,7 @@ function GetAll {
 }
 
 Set-Alias -Name ll -Value GetAll
-# Set-PSReadLineOption -EditMode Vi
+Set-PSReadLineOption -EditMode Vi
 
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadLineOption -PredictionViewStyle ListView
