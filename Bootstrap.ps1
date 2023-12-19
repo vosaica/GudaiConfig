@@ -6,7 +6,7 @@ if ($args.Length -ge 1) {
         $Debug = $true
     }
     else {
-        Write-Output "Usage: Bootstrap.ps1 [--debug]"
+        Write-Host "Usage: Bootstrap.ps1 [--debug]"
         exit
     }
 }
@@ -26,10 +26,11 @@ function CreateSymbolicLink {
     $Target = Join-Path $ConfigDir $Target
 
     if ($Debug) {
-        Write-Output "Will be linking: $Path -> $Target"
+        Write-Host "Will be linking: $Path -> $Target" -ForegroundColor Green
     }
     else {
-        New-Item -ItemType SymbolicLink -Path $Path -Target $Target -Force
+        New-Item -ItemType SymbolicLink -Path $Path -Target $Target -Force | Out-Null
+        Write-Host "Linked $Path -> $Target" -ForegroundColor Green
     }
 }
 
@@ -44,24 +45,25 @@ function CopySSHKeys {
     $Path = "~/.ssh/$FileName"
 
     if ($Debug) {
-        Write-Output "Will be copying: $Target -> $Path"
+        Write-Host "Will be copying: $Target -> $Path" -ForegroundColor Yellow
     }
     else {
         Copy-Item $Target $Path -Force
+        Write-Host "Copied $Target -> $Path" -ForegroundColor Yellow
     }
 }
 
 # Common Files
-Write-Output "Files for all platforms:"
+Write-Host "Files for all platform:" -ForegroundColor Magenta
 CreateSymbolicLink "~/.vimrc" ".vimrc"
 CreateSymbolicLink "~/.config" ".config"
 CreateSymbolicLink "~/.gitconfig" ".gitconfig"
 CreateSymbolicLink "~/.ssh/config" "SSHConfig"
-Write-Output ""
+Write-Host ""
 
 # Windows Files
 if ($IsWindows) {
-    Write-Output "Files for Windows:"
+    Write-Host "Files for Windows:" -ForegroundColor Magenta
     CreateSymbolicLink "~/Documents/PowerShell" ".config/powershell"
     CreateSymbolicLink "~/Documents/PowerToys" "PowerToys"
     CreateSymbolicLink "$env:LOCALAPPDATA/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json" "WindowsTerminal.json"
@@ -70,8 +72,8 @@ if ($IsWindows) {
 }
 
 # Mac Files
-if ($IsMacOS){
-    Write-Output "Files for macOS:"
+if ($IsMacOS) {
+    Write-Host "Files for Mac:" -ForegroundColor Magenta
     CopySSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum.pub"
     CopySSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum"
 }
