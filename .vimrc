@@ -14,6 +14,7 @@ filetype plugin on
 syntax enable
 
 command! Ps terminal pwsh
+command! PsFull terminal++curwin pwsh
 
 map <space> <leader>
 map <leader>h :noh<cr>
