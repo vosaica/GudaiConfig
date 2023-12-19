@@ -1,0 +1,2 @@
+Host pc.homoantiquum.com
+ProxyCommand cloudflared access ssh --hostname %h

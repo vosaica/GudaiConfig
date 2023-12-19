@@ -52,12 +52,16 @@ function CopySSHKeys {
 }
 
 # Common Files
+Write-Output "Files for all platforms:"
 CreateSymbolicLink "~/.vimrc" ".vimrc"
 CreateSymbolicLink "~/.config" ".config"
 CreateSymbolicLink "~/.gitconfig" ".gitconfig"
+CreateSymbolicLink "~/.ssh/config" "SSHConfig"
+Write-Output ""
 
 # Windows Files
 if ($IsWindows) {
+    Write-Output "Files for Windows:"
     CreateSymbolicLink "~/Documents/PowerShell" ".config/powershell"
     CreateSymbolicLink "~/Documents/PowerToys" "PowerToys"
     CreateSymbolicLink "$env:LOCALAPPDATA/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json" "WindowsTerminal.json"
@@ -67,6 +71,7 @@ if ($IsWindows) {
 
 # Mac Files
 if ($IsMacOS){
+    Write-Output "Files for macOS:"
     CopySSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum.pub"
     CopySSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum"
 }
