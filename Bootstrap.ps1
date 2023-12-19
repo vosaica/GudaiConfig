@@ -61,12 +61,12 @@ if ($IsWindows) {
     CreateSymbolicLink "~/Documents/PowerShell" ".config/powershell"
     CreateSymbolicLink "~/Documents/PowerToys" "PowerToys"
     CreateSymbolicLink "$env:LOCALAPPDATA/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json" "WindowsTerminal.json"
-    LinkSSHKeys "G:/My Drive/Backups/sshkeys/id_homoantiquum.pub"
-    LinkSSHKeys "G:/My Drive/Backups/sshkeys/id_homoantiquum"
+    LinkSSHKeys "G:/My Drive/Backups/SSHKeys/id_homoantiquum.pub"
+    LinkSSHKeys "G:/My Drive/Backups/SSHKeys/id_homoantiquum"
 }
 
 # Mac Files
 if ($IsMacOS){
-    LinkSSHKeys "~/Google Drive/My Drive/Backups/sshkeys/id_homoantiquum.pub"
-    LinkSSHKeys "~/Google Drive/My Drive/Backups/sshkeys/id_homoantiquum"
+    LinkSSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum.pub"
+    LinkSSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum"
 }
