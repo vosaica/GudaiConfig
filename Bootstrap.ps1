@@ -33,7 +33,7 @@ function CreateSymbolicLink {
     }
 }
 
-function LinkSSHKeys {
+function CopySSHKeys {
     param (
         [Parameter(Mandatory = $true)]
         [string]$Target
@@ -44,10 +44,10 @@ function LinkSSHKeys {
     $Path = "~/.ssh/$FileName"
 
     if ($Debug) {
-        Write-Output "Will be linking: $Path -> $Target"
+        Write-Output "Will be copying: $Target -> $Path"
     }
     else {
-        New-Item -ItemType SymbolicLink -Path $Path -Target $Target -Force
+        Copy-Item $Target $Path -Force
     }
 }
 
@@ -61,12 +61,12 @@ if ($IsWindows) {
     CreateSymbolicLink "~/Documents/PowerShell" ".config/powershell"
     CreateSymbolicLink "~/Documents/PowerToys" "PowerToys"
     CreateSymbolicLink "$env:LOCALAPPDATA/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json" "WindowsTerminal.json"
-    LinkSSHKeys "G:/My Drive/Backups/SSHKeys/id_homoantiquum.pub"
-    LinkSSHKeys "G:/My Drive/Backups/SSHKeys/id_homoantiquum"
+    CopySSHKeys "G:/My Drive/Backups/SSHKeys/id_homoantiquum.pub"
+    CopySSHKeys "G:/My Drive/Backups/SSHKeys/id_homoantiquum"
 }
 
 # Mac Files
 if ($IsMacOS){
-    LinkSSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum.pub"
-    LinkSSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum"
+    CopySSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum.pub"
+    CopySSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum"
 }
