@@ -2,6 +2,7 @@ set nocompatible
 set nowrap
 set relativenumber
 set autoread
+set mouse=a
 
 " search
 set ignorecase
