@@ -2,7 +2,6 @@ set nocompatible
 set nowrap
 set relativenumber
 set autoread
-set mouse=a
 
 set termguicolors
 set t_Co=256
