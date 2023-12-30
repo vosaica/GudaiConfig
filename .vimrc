@@ -17,7 +17,7 @@ filetype plugin on
 
 syntax enable
 
-command! Ps terminal pwsh
+command! Ps terminal ++type=conpty pwsh
 command! PsFull terminal ++curwin ++type=conpty pwsh
 
 map <space> <leader>
@@ -51,6 +51,7 @@ vmap s <plug>(easymotion-s)
 " lightline
 set laststatus=2
 set noshowmode
+let g:lightline = { 'colorscheme': 'iceberg' }
 
 " fzf
 nnoremap <c-p> :Files<cr>
