@@ -1,18 +1,16 @@
-set nocompatible
+set autoread
 set nowrap
 set relativenumber
-set autoread
 
 set termguicolors
 set t_Co=256
 
-" search
+set hlsearch
 set ignorecase
 set incsearch
-set hlsearch
 set smartcase
 
-filetype plugin on
+filetype plugin indent on
 
 syntax enable
 
