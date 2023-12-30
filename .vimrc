@@ -18,11 +18,11 @@ filetype plugin on
 syntax enable
 
 if has('win32')
-    command! Ps terminal ++close ++type=conpty pwsh
-    command! PsFull terminal ++close ++type=conpty ++curwin pwsh
+    command! PS terminal ++close ++type=conpty pwsh
+    command! PSFull terminal ++close ++type=conpty ++curwin pwsh
 else
-    command! Ps terminal ++close pwsh
-    command! PsFull terminal ++close ++curwin pwsh
+    command! PS terminal ++close pwsh
+    command! PSFull terminal ++close ++curwin pwsh
 endif
 
 map <space> <leader>
