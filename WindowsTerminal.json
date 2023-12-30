@@ -420,5 +420,6 @@
         }
     ],
     "theme": "system",
-    "themes": []
+    "themes": [],
+    "useAcrylicInTabRow": true
 }
