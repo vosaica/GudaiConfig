@@ -67,6 +67,8 @@ if ($IsWindows) {
     CreateSymbolicLink "~/Documents/PowerShell" ".config/powershell"
     CreateSymbolicLink "~/Documents/PowerToys" "PowerToys"
     CreateSymbolicLink "$env:LOCALAPPDATA/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json" "WindowsTerminal.json"
+    CreateSymbolicLink "$env:LOCALAPPDATA/Microsoft/Windows/Themes/Gudai Dark.theme" "Gudai Dark.theme"
+    CreateSymbolicLink "$env:LOCALAPPDATA/Microsoft/Windows/Themes/Gudai Light.theme" "Gudai Light.theme"
     CopySSHKeys "G:/My Drive/Backups/SSHKeys/id_homoantiquum.pub"
     CopySSHKeys "G:/My Drive/Backups/SSHKeys/id_homoantiquum"
 }
