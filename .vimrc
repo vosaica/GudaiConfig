@@ -1,6 +1,7 @@
 set autoread
 set nowrap
 set relativenumber
+set clipboard=unnamedplus
 
 set termguicolors
 set t_Co=256
