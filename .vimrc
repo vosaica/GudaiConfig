@@ -62,17 +62,3 @@ if has('win32')
     let g:fzf_vim = {}
     let g:fzf_vim.preview_bash = 'C:\Program Files\Git\bin\bash.exe'
 endif
-
-" vim-lumen
-" au User LumenLight let g:terminal_ansi_colors = [
-"     \ '#1F2428', '#EA4A5A', '#7FF9A4', '#FFA333',
-"     \ '#489DFF', '#A175F1', '#0EDEFA', '#F7FAFF',
-"     \ '#454647', '#F97583', '#B1FFBC', '#FFC073',
-"     \ '#79B8FF', '#B392F0', '#79EFFF', '#DEE1E6'
-"     \]
-" au User LumenDark let g:terminal_ansi_colors = [
-"     \ '#1F2428', '#EA4A5A', '#7FF9A4', '#FFA333',
-"     \ '#489DFF', '#A175F1', '#0EDEFA', '#F7FAFF',
-"     \ '#454647', '#F97583', '#B1FFBC', '#FFC073',
-"     \ '#79B8FF', '#B392F0', '#79EFFF', '#DEE1E6'
-"     \]
