@@ -36,7 +36,7 @@
                 "commandline": "vim -c \"PSFull\"",
                 "guid": "{2eb59471-bd2f-4963-a8ac-1c5533e57797}",
                 "hidden": false,
-                "icon": "C:\\Program Files\\Vim\\vim90\\bitmaps\\vim.ico",
+                "icon": "C:\\Program Files\\Vim\\vim91\\bitmaps\\vim.ico",
                 "name": "Vim",
                 "scrollbarState": "hidden",
                 "startingDirectory": "%USERPROFILE%"
