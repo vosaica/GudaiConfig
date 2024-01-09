@@ -1,13 +1,7 @@
 return {
-    {
-        "vimpostor/vim-lumen"
-    },
-    {
-        "tpope/vim-surround"
-    },
-    {
-        "tpope/vim-commentary"
-    },
+    "vimpostor/vim-lumen",
+    "tpope/vim-surround",
+    "tpope/vim-commentary",
     {
         "bkad/CamelCaseMotion",
         init = function()
@@ -19,7 +13,8 @@ return {
         lazy = false,
         priority = 1000,
         opts = {
-            transparent = true
+            transparent = true,
+            terminal_colors = false
         },
         init = function()
             vim.cmd [[colorscheme tokyonight]]
@@ -27,6 +22,11 @@ return {
     },
     {
         "nvim-lualine/lualine.nvim",
+        opts = {
+            options = {
+                icons_enabled = false,
+            }
+        },
         init = function()
             require('lualine').setup()
         end
