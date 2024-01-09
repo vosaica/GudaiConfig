@@ -2,6 +2,7 @@ vim.opt.autoread = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.wrap = false
 vim.opt.relativenumber = true
+vim.opt.showmode = false
 vim.opt.termguicolors = true
 
 -- search
