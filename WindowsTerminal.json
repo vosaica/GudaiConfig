@@ -9,7 +9,7 @@
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{2eb59471-bd2f-4963-a8ac-1c5533e57797}",
+    "defaultProfile": "{5b3507d5-84c5-422d-b913-9e9f5f6fc134}",
     "initialCols": 88,
     "initialRows": 28,
     "newTabMenu": [
@@ -28,6 +28,19 @@
             }
         },
         "list": [
+            {
+                "colorScheme": {
+                    "dark": "Gudai Dark",
+                    "light": "Gudai Light"
+                },
+                "commandline": "nvim -c \"terminal pwsh\"",
+                "guid": "{5b3507d5-84c5-422d-b913-9e9f5f6fc134}",
+                "hidden": false,
+                "icon": "C:\\Program Files\\Neovim\\share\\icons\\hicolor\\128x128\\apps\\nvim.png",
+                "name": "Neovim",
+                "scrollbarState": "hidden",
+                "startingDirectory": "%USERPROFILE%"
+            },
             {
                 "colorScheme": {
                     "dark": "Gudai Iceberg Dark",
