@@ -1,5 +1,7 @@
 # GudaiConfigs
+
 My own configuration files
 
 ## Usage
-`pwsh Bootstrap.ps1`
+
+`pwsh bootstrap.ps1`

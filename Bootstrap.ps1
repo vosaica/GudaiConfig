@@ -11,15 +11,14 @@ if ($args.Length -ge 1) {
     }
 }
 
-# Get Current Directory
-$ConfigDir = (Get-Location).Path
-
 function CreateSymbolicLink {
     param (
         [Parameter(Mandatory = $true)]
         [string]$Path,
         [Parameter(Mandatory = $true)]
-        [string]$Target
+        [string]$Target,
+        [Parameter(Mandatory = $false)]
+        [string]$ConfigDir = (Get-Location).Path
     )
 
     # join path Current Directory and Target
@@ -70,8 +69,10 @@ if ($IsWindows) {
     CreateSymbolicLink "$env:LOCALAPPDATA/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json" "WindowsTerminal.json"
     CreateSymbolicLink "$env:LOCALAPPDATA/Microsoft/Windows/Themes/Gudai Dark.theme" "Gudai Dark.theme"
     CreateSymbolicLink "$env:LOCALAPPDATA/Microsoft/Windows/Themes/Gudai Light.theme" "Gudai Light.theme"
-    CopySSHKeys "G:/My Drive/Backups/SSHKeys/id_homoantiquum.pub"
-    CopySSHKeys "G:/My Drive/Backups/SSHKeys/id_homoantiquum"
+    CopySSHKeys "G:/My Drive/Backup/SSHKeys/id_homoantiquum.pub"
+    CopySSHKeys "G:/My Drive/Backup/SSHKeys/id_homoantiquum"
+
+    CreateSymbolicLink "~/Documents/美少女万華鏡３" "美少女万華鏡３" "G:/My Drive/Backup"
 }
 
 # Mac Files
