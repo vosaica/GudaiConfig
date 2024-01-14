@@ -6,7 +6,7 @@ if ($args.Length -ge 1) {
         $Debug = $true
     }
     else {
-        Write-Host "Usage: Bootstrap.ps1 [--debug]"
+        Write-Host "Usage: bootstrap.ps1 [--debug]"
         exit
     }
 }
