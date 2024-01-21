@@ -3,6 +3,10 @@ return {
     "tpope/vim-surround",
     "tpope/vim-commentary",
     {
+        'junegunn/fzf.vim',
+        dependencies = { 'junegunn/fzf' }
+    },
+    {
         "bkad/CamelCaseMotion",
         init = function()
             vim.g.camelcasemotion_key = "<leader>"
