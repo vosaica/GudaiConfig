@@ -55,6 +55,7 @@ function CopySSHKeys {
 # Common Files
 Write-Host "Files for all platform:" -ForegroundColor Magenta
 CreateSymbolicLink "~/.vimrc" ".vimrc"
+CreateSymbolicLink "~/.ideavimrc" ".ideavimrc"
 CreateSymbolicLink "~/.config" ".config"
 CreateSymbolicLink "~/.gitconfig" ".gitconfig"
 CreateSymbolicLink "~/.ssh/config" "SSHConfig"
