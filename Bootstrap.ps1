@@ -79,6 +79,6 @@ if ($IsWindows) {
 # Mac Files
 if ($IsMacOS) {
     Write-Host "Files for Mac:" -ForegroundColor Magenta
-    CopySSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum.pub"
-    CopySSHKeys "~/Google Drive/My Drive/Backups/SSHKeys/id_homoantiquum"
+    CopySSHKeys "~/Google Drive/My Drive/Backup/SSHKeys/id_homoantiquum.pub"
+    CopySSHKeys "~/Google Drive/My Drive/Backup/SSHKeys/id_homoantiquum"
 }
