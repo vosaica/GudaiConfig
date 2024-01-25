@@ -13,8 +13,8 @@ vim.opt.smartcase = true
 
 vim.g.mapleader = " "
 
--- key map to emulate <c-w> in vim terminal
-vim.api.nvim_set_keymap("t", "<c-w>", [[<c-\><c-n><c-w>]], { noremap = true })
+-- key map to emulate <c-[> in vim terminal
+vim.api.nvim_set_keymap("t", "<c-[>", [[<c-\><c-n><esc>]], { noremap = true })
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
