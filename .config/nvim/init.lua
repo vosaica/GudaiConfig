@@ -16,6 +16,17 @@ vim.g.mapleader = " "
 -- key map to emulate <c-[> in vim terminal
 vim.api.nvim_set_keymap("t", "<c-[>", [[<c-\><c-n><esc>]], { noremap = true })
 
+-- functions
+TermBoot = function()
+    vim.cmd [[silent! edit ~/]]
+    vim.cmd [[silent! split]]
+    vim.cmd [[silent! terminal]]
+    vim.cmd [[silent! startinsert]]
+end
+
+-- define vim command
+vim.cmd [[command! TermBoot lua TermBoot()]]
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({

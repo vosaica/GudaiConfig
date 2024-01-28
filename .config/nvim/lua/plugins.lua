@@ -7,6 +7,14 @@ return {
         dependencies = { 'junegunn/fzf' }
     },
     {
+        "willothy/flatten.nvim",
+        opts = {
+            window = { open = "alternate" }
+        },
+        lazy = false,
+        priority = 1001,
+    },
+    {
         "bkad/CamelCaseMotion",
         init = function()
             vim.g.camelcasemotion_key = "<leader>"
