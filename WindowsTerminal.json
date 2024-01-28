@@ -33,7 +33,7 @@
                     "dark": "Gudai Dark",
                     "light": "Gudai Light"
                 },
-                "commandline": "nvim -c \"terminal pwsh\"",
+                "commandline": "nvim -c \"TermBoot\"",
                 "guid": "{5b3507d5-84c5-422d-b913-9e9f5f6fc134}",
                 "hidden": false,
                 "icon": "C:\\Program Files\\Neovim\\share\\icons\\hicolor\\128x128\\apps\\nvim.png",

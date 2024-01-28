@@ -20,7 +20,7 @@ vim.api.nvim_set_keymap("t", "<c-[>", [[<c-\><c-n><esc>]], { noremap = true })
 TermBoot = function()
     vim.cmd [[silent! edit ~/]]
     vim.cmd [[silent! split]]
-    vim.cmd [[silent! terminal]]
+    vim.cmd [[silent! terminal pwsh]]
     vim.cmd [[silent! startinsert]]
 end
 
