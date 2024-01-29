@@ -12,6 +12,7 @@ vim.opt.incsearch = true
 vim.opt.smartcase = true
 
 vim.g.mapleader = " "
+vim.g.netrw_browse_split = 4
 
 -- key map to emulate <c-[> in vim terminal
 vim.api.nvim_set_keymap("t", "<c-[>", [[<c-\><c-n><esc>]], { noremap = true })

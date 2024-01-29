@@ -39,9 +39,6 @@ return {
                 icons_enabled = false,
             }
         },
-        init = function()
-            require('lualine').setup()
-        end,
     },
     {
         "vimpostor/vim-lumen",
@@ -66,7 +63,8 @@ return {
         event = "VeryLazy",
         init = function()
             vim.o.timeout = true
-            vim.o.timeoutlen = 300
+            vim.o.timeoutlen = 500
         end,
+        opts = {},
     },
 }
