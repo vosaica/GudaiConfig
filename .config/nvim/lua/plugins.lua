@@ -1,10 +1,12 @@
 return {
-    "vimpostor/vim-lumen",
-    "tpope/vim-surround",
-    "tpope/vim-commentary",
     {
-        'junegunn/fzf.vim',
-        dependencies = { 'junegunn/fzf' }
+        "bkad/CamelCaseMotion",
+        init = function()
+            vim.g.camelcasemotion_key = "<leader>"
+        end,
+    },
+    {
+        "tpope/vim-commentary",
     },
     {
         "willothy/flatten.nvim",
@@ -13,35 +15,6 @@ return {
         },
         lazy = false,
         priority = 1001,
-    },
-    {
-        "bkad/CamelCaseMotion",
-        init = function()
-            vim.g.camelcasemotion_key = "<leader>"
-        end
-    },
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {
-            transparent = true,
-            terminal_colors = false
-        },
-        init = function()
-            vim.cmd [[colorscheme tokyonight]]
-        end
-    },
-    {
-        "nvim-lualine/lualine.nvim",
-        opts = {
-            options = {
-                icons_enabled = false,
-            }
-        },
-        init = function()
-            require('lualine').setup()
-        end
     },
     {
         "folke/flash.nvim",
@@ -54,5 +27,46 @@ return {
                 desc = "Flash"
             },
         },
-    }
+    },
+    {
+        'junegunn/fzf.vim',
+        dependencies = { 'junegunn/fzf' },
+    },
+    {
+        "nvim-lualine/lualine.nvim",
+        opts = {
+            options = {
+                icons_enabled = false,
+            }
+        },
+        init = function()
+            require('lualine').setup()
+        end,
+    },
+    {
+        "vimpostor/vim-lumen",
+    },
+    {
+        "tpope/vim-surround",
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            transparent = true,
+            terminal_colors = false
+        },
+        init = function()
+            vim.cmd [[colorscheme tokyonight]]
+        end,
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+    },
 }
