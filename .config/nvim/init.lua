@@ -20,11 +20,10 @@ vim.g.netrw_winsize = -20
 
 -- key map to emulate <c-[> in vim terminal
 vim.api.nvim_set_keymap("t", "<c-[>", [[<c-\><c-n><esc>]], { noremap = true })
+vim.api.nvim_set_keymap("t", "<esc>", "<esc>", { noremap = true })
 
 -- functions
 TermBoot = function()
-    vim.cmd [[silent! edit ~/]]
-    vim.cmd [[silent! split]]
     vim.cmd [[silent! terminal pwsh]]
     vim.cmd [[silent! startinsert]]
 end
