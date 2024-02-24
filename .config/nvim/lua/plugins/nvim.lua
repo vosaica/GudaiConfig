@@ -36,7 +36,10 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         dependencies = {
-            "williamboman/mason.nvim",
+            {
+                "williamboman/mason.nvim",
+                opts = {},
+            },
         },
         opts = {
             handlers = {
@@ -47,18 +50,40 @@ return {
         },
     },
     {
-        "williamboman/mason.nvim",
-        opts = {},
-    },
-    {
         "folke/neodev.nvim",
         opts = {},
     },
     {
         'nvim-telescope/telescope.nvim',
+        cmd = "Telescope",
         dependencies = {
-            'nvim-lua/plenary.nvim'
+            'nvim-lua/plenary.nvim',
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                build =
+                'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+            },
         },
+        keys = {
+            { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files", },
+            { "<leader>fg", "<cmd>Telescope live_grep<cr>",  desc = "Grep", },
+            { "<leader>fb", "<cmd>Telescope buffers<cr>",    desc = "Buffers", },
+            { "<leader>fh", "<cmd>Telescope help_tags<cr>",  desc = "Help tags", },
+            { "<leader>fc", "<cmd>Telescope commands<cr>",   desc = "Commands", },
+        },
+        opts = {
+            extensions = {
+                fzf = {
+                    fuzzy = true,
+                    override_generic_sorter = true,
+                    override_file_sorter = true,
+                }
+            },
+        },
+        config = function(_, opts)
+            require('telescope').setup(opts)
+            require('telescope').load_extension('fzf')
+        end,
     },
     {
         "folke/tokyonight.nvim",
@@ -79,7 +104,7 @@ return {
             require("nvim-treesitter.configs").setup(opts)
         end,
         keys = {
-            { "<cr>", desc = "Increment selection" },
+            { "<cr>", desc = "Increment selection", },
             { "<bs>", desc = "Decrement selection", mode = "x" },
         },
         opts = {
