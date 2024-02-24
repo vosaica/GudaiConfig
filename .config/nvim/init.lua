@@ -1,9 +1,9 @@
 vim.opt.autoread = true
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.wrap = false
 vim.opt.relativenumber = true
 vim.opt.showmode = false
 vim.opt.termguicolors = true
+vim.opt.wrap = false
 
 -- search
 vim.opt.hlsearch = true
@@ -14,8 +14,8 @@ vim.opt.smartcase = true
 vim.g.mapleader = " "
 vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 4
-vim.g.netrw_liststyle = 2
 vim.g.netrw_list_hide = [[^\(ntuser\|NTUSER\)\..*]]
+vim.g.netrw_liststyle = 2
 vim.g.netrw_winsize = -20
 
 -- key map to emulate <c-[> in vim terminal
