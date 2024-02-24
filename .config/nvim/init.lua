@@ -19,8 +19,8 @@ vim.g.netrw_liststyle = 2
 vim.g.netrw_winsize = -20
 
 -- key map to emulate <c-[> in vim terminal
-vim.api.nvim_set_keymap("t", "<esc>", "<esc>", { noremap = true })
-vim.api.nvim_set_keymap("t", "<c-[>", [[<c-\><c-n><esc>]], { noremap = true })
+-- vim.api.nvim_set_keymap("t", "<c-[>", [[<c-\><c-n>]], { noremap = false })
+-- vim.api.nvim_set_keymap("t", "<esc>", "<esc>", { noremap = true })
 
 -- functions
 TermBoot = function()

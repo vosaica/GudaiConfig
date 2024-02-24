@@ -28,15 +28,27 @@ return {
         },
     },
     {
+        "neovim/nvim-lspconfig",
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim",
+        },
+    },
+    {
         "williamboman/mason-lspconfig.nvim",
         dependencies = {
-            {
-                "williamboman/mason.nvim",
-                opts = {}
-            },
-            { "neovim/nvim-lspconfig" },
+            "williamboman/mason.nvim",
         },
-        opts = {},
+        opts = {
+            handlers = {
+                function(server_name)
+                    require("lspconfig")[server_name].setup {}
+                end
+            }
+        },
+    },
+    {
+        "williamboman/mason.nvim",
+        opts = {}
     },
     {
         "folke/neodev.nvim",
