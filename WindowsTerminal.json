@@ -21,7 +21,7 @@
         "defaults": {
             "cursorShape": "filledBox",
             "font": {
-                "face": "JetBrains Mono",
+                "face": "JetBrainsMono Nerd Font",
                 "features": {
                     "liga": 1
                 }
