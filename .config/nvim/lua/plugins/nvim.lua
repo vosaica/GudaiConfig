@@ -48,11 +48,17 @@ return {
     },
     {
         "williamboman/mason.nvim",
-        opts = {}
+        opts = {},
     },
     {
         "folke/neodev.nvim",
         opts = {},
+    },
+    {
+        'nvim-telescope/telescope.nvim',
+        dependencies = {
+            'nvim-lua/plenary.nvim'
+        },
     },
     {
         "folke/tokyonight.nvim",
@@ -93,7 +99,7 @@ return {
                     node_decremental = "<bs>",
                 },
             },
-        }
+        },
     },
     {
         "folke/which-key.nvim",

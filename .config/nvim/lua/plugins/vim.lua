@@ -9,10 +9,6 @@ return {
         "tpope/vim-commentary",
     },
     {
-        'junegunn/fzf.vim',
-        dependencies = { 'junegunn/fzf' },
-    },
-    {
         "vimpostor/vim-lumen",
     },
     {
