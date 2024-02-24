@@ -4,23 +4,23 @@ return {
         lazy = false,
         priority = 1001,
         opts = {
-            window = { open = "alternate" },
+            window = {
+                open = "alternate",
+            },
         },
     },
     {
         "folke/flash.nvim",
         event = "VeryLazy",
         keys = {
-            {
-                "s",
-                mode = { "n", "x", "o" },
-                function() require("flash").jump() end,
-                desc = "Flash"
-            },
+            { "s", function() require("flash").jump() end, desc = "Flash", mode = { "n", "x", "o" }, },
         },
     },
     {
         "nvim-lualine/lualine.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons"
+        },
         opts = {
             options = {
                 icons_enabled = false,
@@ -54,14 +54,22 @@ return {
         opts = {},
     },
     {
-        'nvim-telescope/telescope.nvim',
+        "chrisgrieser/nvim-spider",
+        keys = {
+            { "w", "<cmd>lua require('spider').motion('w')<CR>", mode = { "n", "o", "x" }, desc = "Move to start of subword", },
+            { "e", "<cmd>lua require('spider').motion('e')<CR>", mode = { "n", "o", "x" }, desc = "Move to end of word", },
+            { "b", "<cmd>lua require('spider').motion('b')<CR>", mode = { "n", "o", "x" }, desc = "Move to start of word", }
+        },
+    },
+    {
+        "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
         dependencies = {
-            'nvim-lua/plenary.nvim',
+            "nvim-lua/plenary.nvim",
             {
-                'nvim-telescope/telescope-fzf-native.nvim',
+                "nvim-telescope/telescope-fzf-native.nvim",
                 build =
-                'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+                "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
             },
         },
         keys = {
@@ -81,8 +89,8 @@ return {
             },
         },
         config = function(_, opts)
-            require('telescope').setup(opts)
-            require('telescope').load_extension('fzf')
+            require("telescope").setup(opts)
+            require("telescope").load_extension("fzf")
         end,
     },
     {
@@ -125,6 +133,17 @@ return {
                 },
             },
         },
+    },
+    {
+        "nvim-tree/nvim-tree.lua",
+        lazy = false,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        keys = {
+            { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file tree", },
+        },
+        opts = {},
     },
     {
         "folke/which-key.nvim",
