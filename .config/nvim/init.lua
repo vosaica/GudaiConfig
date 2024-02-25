@@ -1,5 +1,5 @@
 vim.opt.autoread = true
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
 vim.opt.showmode = false
 vim.opt.termguicolors = true
@@ -23,22 +23,22 @@ vim.api.nvim_set_keymap("t", "<esc><esc>", [[<c-\><c-n>]], { noremap = true })
 
 -- functions
 TermBoot = function()
-    vim.cmd [[ToggleTerm]]
+	vim.cmd([[ToggleTerm]])
 end
 
 -- define vim command
-vim.cmd [[command! TermBoot lua TermBoot()]]
+vim.cmd([[command! TermBoot lua TermBoot()]])
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
