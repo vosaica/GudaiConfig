@@ -38,10 +38,8 @@ return {
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
-				-- Conform will run multiple formatters sequentially
-				python = { "isort", "black" },
-				-- Use a sub-list to run only the first available formatter
-				javascript = { { "prettierd", "prettier" } },
+				python = { "ruff_format" },
+				["*"] = { "trim_whitespace" },
 			},
 		},
 	},
@@ -139,13 +137,13 @@ return {
 	{
 		"akinsho/toggleterm.nvim",
 		opts = {
-			open_mapping = [[<c-\>]],
-			-- use pwsh as default shell
-			shell = "pwsh",
+			autochdir = true,
+			border = "curved",
 			direction = "float",
 			float_opts = {
-				border = "curved",
+				shell = "pwsh",
 			},
+			open_mapping = [[<c-\>]],
 		},
 	},
 	{

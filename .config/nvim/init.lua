@@ -5,6 +5,10 @@ vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.wrap = false
 
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.tabstop = 4
+
 -- search
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
