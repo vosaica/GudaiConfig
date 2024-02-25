@@ -18,14 +18,12 @@ vim.g.netrw_list_hide = [[^\(ntuser\|NTUSER\)\..*]]
 vim.g.netrw_liststyle = 2
 vim.g.netrw_winsize = -20
 
--- key map to emulate <c-[> in vim terminal
--- vim.api.nvim_set_keymap("t", "<c-[>", [[<c-\><c-n>]], { noremap = false })
--- vim.api.nvim_set_keymap("t", "<esc>", "<esc>", { noremap = true })
+-- keymaps
+vim.api.nvim_set_keymap("t", "<esc><esc>", [[<c-\><c-n>]], { noremap = true })
 
 -- functions
 TermBoot = function()
-    vim.cmd [[silent! terminal pwsh]]
-    vim.cmd [[silent! startinsert]]
+    vim.cmd [[ToggleTerm]]
 end
 
 -- define vim command

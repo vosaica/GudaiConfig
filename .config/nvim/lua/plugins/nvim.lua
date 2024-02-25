@@ -46,7 +46,7 @@ return {
                 function(server_name)
                     require("lspconfig")[server_name].setup {}
                 end
-            }
+            },
         },
     },
     {
@@ -92,6 +92,18 @@ return {
             require("telescope").setup(opts)
             require("telescope").load_extension("fzf")
         end,
+    },
+    {
+        "akinsho/toggleterm.nvim",
+        opts = {
+            open_mapping = [[<c-\>]],
+            -- use pwsh as default shell
+            shell = "pwsh",
+            direction = "float",
+            float_opts = {
+                border = 'curved',
+            },
+        },
     },
     {
         "folke/tokyonight.nvim",
