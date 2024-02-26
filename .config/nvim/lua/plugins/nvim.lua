@@ -1,5 +1,13 @@
 return {
 	{
+		"echasnovski/mini.animate",
+		opts = {},
+	},
+	{
+		"echasnovski/mini.completion",
+		opts = {},
+	},
+	{
 		"willothy/flatten.nvim",
 		lazy = false,
 		priority = 1001,
@@ -57,6 +65,10 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
+			{
+				"folke/neodev.nvim",
+				opts = {},
+			},
 			"williamboman/mason-lspconfig.nvim",
 		},
 	},
@@ -75,10 +87,6 @@ return {
 				end,
 			},
 		},
-	},
-	{
-		"folke/neodev.nvim",
-		opts = {},
 	},
 	{
 		"chrisgrieser/nvim-spider",
@@ -138,10 +146,10 @@ return {
 		"akinsho/toggleterm.nvim",
 		opts = {
 			autochdir = true,
-			border = "curved",
+			shell = "pwsh",
 			direction = "float",
 			float_opts = {
-				shell = "pwsh",
+				border = "curved",
 			},
 			open_mapping = [[<c-\>]],
 		},
