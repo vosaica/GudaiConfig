@@ -155,6 +155,7 @@ return {
 			terminal_colors = false,
 		},
 		init = function()
+			vim.opt.termguicolors = true
 			vim.cmd([[colorscheme tokyonight]])
 		end,
 	},
@@ -196,7 +197,13 @@ return {
 		keys = {
 			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file tree" },
 		},
-		opts = {},
+		init = function()
+			vim.g.loaded_netrw = 1
+			vim.g.loaded_netrwPlugin = 1
+		end,
+		opts = {
+			sync_root_with_cwd = true,
+		},
 	},
 	{
 		"folke/which-key.nvim",
