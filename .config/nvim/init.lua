@@ -22,6 +22,15 @@ vim.g.netrw_liststyle = 2
 vim.g.netrw_winsize = -20
 
 -- keymaps
+vim.api.nvim_set_keymap("n", "gD", [[<cmd>lua vim.lsp.buf.declaration()<cr>]], { noremap = true })
+vim.api.nvim_set_keymap("n", "gH", [[<cmd>lua vim.lsp.buf.signature_help()<cr>]], { noremap = true })
+vim.api.nvim_set_keymap("n", "gR", [[<cmd>lua vim.lsp.buf.rename()<cr>]], { noremap = true })
+vim.api.nvim_set_keymap("n", "ga", [[<cmd>lua vim.lsp.buf.code_action()<cr>]], { noremap = true })
+vim.api.nvim_set_keymap("n", "gd", [[<cmd>lua vim.lsp.buf.definition()<cr>]], { noremap = true })
+vim.api.nvim_set_keymap("n", "gh", [[<cmd>lua vim.lsp.buf.hover()<cr>]], { noremap = true })
+vim.api.nvim_set_keymap("n", "gi", [[<cmd>lua vim.lsp.buf.implementation()<cr>]], { noremap = true })
+vim.api.nvim_set_keymap("n", "gr", [[<cmd>lua vim.lsp.buf.references()<cr>]], { noremap = true })
+
 vim.api.nvim_set_keymap("t", "<esc><esc>", [[<c-\><c-n>]], { noremap = true })
 
 -- functions

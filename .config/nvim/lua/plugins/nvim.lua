@@ -35,7 +35,7 @@ return {
 		"stevearc/conform.nvim",
 		keys = {
 			{
-				"<leader>cf",
+				"<leader>f",
 				function()
 					require("conform").format()
 				end,
@@ -122,11 +122,11 @@ return {
 			},
 		},
 		keys = {
-			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-			{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
-			{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
-			{ "<leader>fc", "<cmd>Telescope commands<cr>", desc = "Commands" },
+			{ "<leader>tf", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+			{ "<leader>tg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
+			{ "<leader>tb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+			{ "<leader>th", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
+			{ "<leader>tc", "<cmd>Telescope commands<cr>", desc = "Commands" },
 		},
 		opts = {
 			extensions = {
