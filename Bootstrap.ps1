@@ -74,6 +74,7 @@ if ($IsWindows) {
     CopySSHKeys "G:/My Drive/Backup/SSHKeys/id_homoantiquum"
 
     CreateSymbolicLink "~/Documents/美少女万華鏡３" "美少女万華鏡３" "G:/My Drive/Backup"
+    CreateSymbolicLink "$env:APPDATA/Nitroplus" "Nitroplus" "G:/My Drive/Backup"
 }
 
 # Mac Files
