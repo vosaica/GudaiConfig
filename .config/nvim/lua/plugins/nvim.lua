@@ -1,9 +1,5 @@
 return {
 	{
-		"echasnovski/mini.animate",
-		opts = {},
-	},
-	{
 		"echasnovski/mini.completion",
 		opts = {},
 	},
@@ -81,6 +77,12 @@ return {
 			},
 		},
 		opts = {
+			ensure_installed = {
+				"clangd",
+				"lua_ls",
+				"powershell_es",
+				"pyright",
+			},
 			handlers = {
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
