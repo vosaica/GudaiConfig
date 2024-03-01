@@ -1,7 +1,12 @@
 return {
 	{
 		"echasnovski/mini.completion",
-		opts = {},
+		opts = {
+			window = {
+				info = { border = "rounded" },
+				signature = { border = "rounded" },
+			},
+		},
 	},
 	{
 		"willothy/flatten.nvim",
@@ -57,24 +62,32 @@ return {
 				icons_enabled = false,
 			},
 		},
+		init = function()
+			vim.opt.showmode = false
+		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			{
-				"folke/neodev.nvim",
-				opts = {},
-			},
+			"folke/neodev.nvim",
 			"williamboman/mason-lspconfig.nvim",
+		},
+		config = function()
+			require("lspconfig.ui.windows").default_options.border = "rounded"
+		end,
+	},
+	{
+		"williamboman/mason.nvim",
+		opts = {
+			ui = {
+				border = "rounded",
+			},
 		},
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
-			{
-				"williamboman/mason.nvim",
-				opts = {},
-			},
+			"williamboman/mason.nvim",
 		},
 		opts = {
 			ensure_installed = {
@@ -89,6 +102,10 @@ return {
 				end,
 			},
 		},
+	},
+	{
+		"folke/neodev.nvim",
+		opts = {},
 	},
 	{
 		"chrisgrieser/nvim-spider",
@@ -212,6 +229,7 @@ return {
 			vim.g.loaded_netrwPlugin = 1
 		end,
 		opts = {
+			disable_netrw = true,
 			sync_root_with_cwd = true,
 		},
 	},

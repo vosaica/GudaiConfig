@@ -1,7 +1,6 @@
 vim.opt.autoread = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
-vim.opt.showmode = false
 vim.opt.wrap = false
 
 vim.opt.expandtab = true
@@ -20,6 +19,9 @@ vim.g.netrw_browse_split = 4
 vim.g.netrw_list_hide = [[^\(ntuser\|NTUSER\)\..*]]
 vim.g.netrw_liststyle = 2
 vim.g.netrw_winsize = -20
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 
 -- keymaps
 vim.api.nvim_set_keymap("n", "gD", [[<cmd>lua vim.lsp.buf.declaration()<cr>]], { noremap = true })
@@ -53,4 +55,4 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", { ui = { border = "rounded" } })
