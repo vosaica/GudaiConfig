@@ -3,6 +3,7 @@ return {
 		"hrsh7th/nvim-cmp",
 		dependencies = {
 			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-vsnip",
@@ -21,33 +22,43 @@ return {
 					documentation = cmp.config.window.bordered(),
 				},
 				mapping = cmp.mapping.preset.insert({
-					["<c-b>"] = cmp.mapping.scroll_docs(-4),
-					["<c-f>"] = cmp.mapping.scroll_docs(4),
+					["<c-u>"] = cmp.mapping.scroll_docs(-4),
+					["<c-d>"] = cmp.mapping.scroll_docs(4),
 					["<c-space>"] = cmp.mapping.complete(),
 					["<c-e>"] = cmp.mapping.abort(),
 					["<cr>"] = cmp.mapping.confirm({ select = true }),
 				}),
-				sources = cmp.config.sources({ { name = "nvim_lsp" }, { name = "vsnip" } }, { { name = "buffer" } }),
+				sources = cmp.config.sources(
+					{ { name = "nvim_lsp" }, { name = "vsnip" } },
+					{ { name = "buffer" }, { name = "path" } }
+				),
 			}
 		end,
-	},
-	{
-		"echasnovski/mini.completion",
-		opts = {
-			window = {
-				info = { border = "rounded" },
-				signature = { border = "rounded" },
-			},
-		},
+		config = function(_, opts)
+			local cmp = require("cmp")
+			cmp.setup(opts)
+			cmp.setup.cmdline({ "/", "?" }, {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "buffer" },
+				},
+			})
+			cmp.setup.cmdline(":", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = "path" },
+				}, {
+					{ name = "cmdline" },
+				}),
+			})
+		end,
 	},
 	{
 		"willothy/flatten.nvim",
 		lazy = false,
 		priority = 1001,
 		opts = {
-			window = {
-				open = "alternate",
-			},
+			window = { open = "alternate" },
 		},
 	},
 	{
@@ -90,9 +101,7 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		opts = {
-			options = {
-				icons_enabled = false,
-			},
+			options = { icons_enabled = false },
 		},
 		init = function()
 			vim.opt.showmode = false
@@ -111,9 +120,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		opts = {
-			ui = {
-				border = "rounded",
-			},
+			ui = { border = "rounded" },
 		},
 	},
 	{
@@ -203,9 +210,7 @@ return {
 			autochdir = true,
 			shell = "pwsh",
 			direction = "float",
-			float_opts = {
-				border = "curved",
-			},
+			float_opts = { border = "curved" },
 			open_mapping = [[<c-\>]],
 		},
 	},
@@ -265,11 +270,11 @@ return {
 			vim.g.loaded_netrwPlugin = 1
 		end,
 		opts = {
+			actions = { change_dir = { global = true } },
 			disable_netrw = true,
+			renderer = { group_empty = true },
 			sync_root_with_cwd = true,
-			view = {
-				relativenumber = true,
-			},
+			view = { relativenumber = true },
 		},
 	},
 	{
