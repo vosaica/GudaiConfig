@@ -54,6 +54,26 @@ return {
 		end,
 	},
 	{
+		"stevearc/conform.nvim",
+		keys = {
+			{
+				"<leader>f",
+				function()
+					require("conform").format()
+				end,
+				mode = { "n", "v" },
+				desc = "Format Injected Langs",
+			},
+		},
+		opts = {
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "ruff_format" },
+				["*"] = { "trim_whitespace" },
+			},
+		},
+	},
+	{
 		"willothy/flatten.nvim",
 		lazy = false,
 		priority = 1001,
@@ -72,26 +92,6 @@ return {
 				end,
 				desc = "Flash",
 				mode = { "n", "x", "o" },
-			},
-		},
-	},
-	{
-		"stevearc/conform.nvim",
-		keys = {
-			{
-				"<leader>f",
-				function()
-					require("conform").format()
-				end,
-				mode = { "n", "v" },
-				desc = "Format Injected Langs",
-			},
-		},
-		opts = {
-			formatters_by_ft = {
-				lua = { "stylua" },
-				python = { "ruff_format" },
-				["*"] = { "trim_whitespace" },
 			},
 		},
 	},
