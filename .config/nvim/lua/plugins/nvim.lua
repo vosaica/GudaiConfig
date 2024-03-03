@@ -59,18 +59,23 @@ return {
 	},
 	{
 		"stevearc/conform.nvim",
+		event = "BufWritePre",
+		cmd = "ConformInfo",
 		keys = {
 			{
 				"<leader>f",
 				function()
-					require("conform").format()
+					require("conform").format({ lsp_fallback = true })
 				end,
 				mode = { "n", "v" },
-				desc = "Format Injected Langs",
+				desc = "Format buffer",
 			},
 		},
 		opts = {
 			formatters_by_ft = {
+				c = { "clang_format" },
+				cpp = { "clang_format" },
+				json = { "prettier" },
 				lua = { "stylua" },
 				python = { "ruff_format" },
 				["*"] = { "trim_whitespace" },
@@ -112,6 +117,24 @@ return {
 		},
 		init = function()
 			vim.opt.showmode = false
+		end,
+	},
+	{
+		"mfussenegger/nvim-lint",
+		event = { "BufWritePre", "BufNewFile" },
+		config = function()
+			local lint = require("lint")
+			lint.linters_by_ft = {
+				-- c = { "clangtidy" },
+				-- cpp = { "clangtidy" },
+				-- lua = { "selene" },
+				python = { "ruff" },
+			}
+			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+				callback = function()
+					lint.try_lint()
+				end,
+			})
 		end,
 	},
 	{
