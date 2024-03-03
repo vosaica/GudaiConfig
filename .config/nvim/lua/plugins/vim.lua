@@ -1,8 +1,5 @@
 return {
 	{
-		"tpope/vim-commentary",
-	},
-	{
 		"github/copilot.vim",
 	},
 	{

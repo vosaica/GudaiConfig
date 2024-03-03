@@ -54,6 +54,10 @@ return {
 		end,
 	},
 	{
+		"echasnovski/mini.comment",
+		opts = {},
+	},
+	{
 		"stevearc/conform.nvim",
 		keys = {
 			{
@@ -86,13 +90,16 @@ return {
 		event = "VeryLazy",
 		keys = {
 			{
-				"s",
+				"<leader>s",
 				function()
 					require("flash").jump()
 				end,
 				desc = "Flash",
 				mode = { "n", "x", "o" },
 			},
+		},
+		opts = {
+			label = { uppercase = false },
 		},
 	},
 	{
@@ -148,6 +155,10 @@ return {
 	},
 	{
 		"folke/neodev.nvim",
+		opts = {},
+	},
+	{
+		"echasnovski/mini.pairs",
 		opts = {},
 	},
 	{
