@@ -95,7 +95,7 @@ return {
 		event = "VeryLazy",
 		keys = {
 			{
-				"<leader>s",
+				"<leader><space>",
 				function()
 					require("flash").jump()
 				end,
@@ -218,11 +218,11 @@ return {
 			},
 		},
 		keys = {
-			{ "<leader>tf", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-			{ "<leader>tg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
-			{ "<leader>tb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
-			{ "<leader>th", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
-			{ "<leader>tc", "<cmd>Telescope commands<cr>", desc = "Commands" },
+			{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+			{ "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
+			{ "<leader>sb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+			{ "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help tags" },
+			{ "<leader>sc", "<cmd>Telescope commands<cr>", desc = "Commands" },
 		},
 		opts = {
 			extensions = {
@@ -297,7 +297,7 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		keys = {
-			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file tree" },
+			{ "<leader>t", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file tree" },
 		},
 		init = function()
 			vim.g.loaded_netrw = 1
