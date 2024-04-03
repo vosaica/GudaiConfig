@@ -185,37 +185,10 @@ return {
 		opts = {},
 	},
 	{
-		"chrisgrieser/nvim-spider",
-		keys = {
-			{
-				"w",
-				"<cmd>lua require('spider').motion('w')<CR>",
-				mode = { "n", "o", "x" },
-				desc = "Move to start of subword",
-			},
-			{
-				"e",
-				"<cmd>lua require('spider').motion('e')<CR>",
-				mode = { "n", "o", "x" },
-				desc = "Move to end of word",
-			},
-			{
-				"b",
-				"<cmd>lua require('spider').motion('b')<CR>",
-				mode = { "n", "o", "x" },
-				desc = "Move to start of word",
-			},
-		},
-	},
-	{
 		"nvim-telescope/telescope.nvim",
 		cmd = "Telescope",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			{
-				"nvim-telescope/telescope-fzf-native.nvim",
-				build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-			},
 		},
 		keys = {
 			{ "<leader>sf", "<cmd>Telescope find_files<cr>", desc = "Find files" },
@@ -235,7 +208,6 @@ return {
 		},
 		config = function(_, opts)
 			require("telescope").setup(opts)
-			require("telescope").load_extension("fzf")
 		end,
 	},
 	{
